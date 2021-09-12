@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/splitter/splitter_ui/tabs.gd" type="Script" id=1]
+[ext_resource path="res://addons/splitter/splitter_ui/empty_stylebox.tres" type="StyleBox" id=2]
+[ext_resource path="res://addons/splitter/splitter_ui/editor.gd" type="Script" id=3]
+[ext_resource path="res://addons/splitter/splitter_ui/PopupMenu.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Editor" type="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 38.0
+
+[node name="Tabs" type="Tabs" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 31.0
+custom_colors/font_color_bg = Color( 0.74902, 0.745098, 0.745098, 1 )
+custom_colors/font_color_fg = Color( 0.933333, 0.937255, 0.94902, 1 )
+tab_align = 0
+tab_close_display_policy = 2
+script = ExtResource( 1 )
+
+[node name="PopupMenu" type="PopupMenu" parent="PanelContainer/Tabs"]
+visible = true
+margin_right = 122.0
+margin_bottom = 178.0
+items = [ "Item 0", null, 0, false, false, 0, 0, null, "", false, "Item 1", null, 0, false, false, 1, 0, null, "", false, "Item 2", null, 0, false, false, 2, 0, null, "", false, "Item 3", null, 0, false, false, 3, 0, null, "", false, "Item 4", null, 0, false, false, 4, 0, null, "", false, "Item 5", null, 0, false, false, 5, 0, null, "", false, "Item 6", null, 0, false, false, 6, 0, null, "", false, "Item 7", null, 0, false, false, 7, 0, null, "", false, "Item 8", null, 0, false, false, 8, 0, null, "", false ]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentParent" type="PanelContainer" parent="."]
+margin_top = 42.0
+margin_right = 1024.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="FindBarParent" type="PanelContainer" parent="."]
+margin_top = 596.0
+margin_right = 1024.0
+margin_bottom = 596.0
+custom_styles/panel = ExtResource( 2 )
+
+[node name="ErrorBarParent" type="PanelContainer" parent="."]
+margin_top = 600.0
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_styles/panel = ExtResource( 2 )
